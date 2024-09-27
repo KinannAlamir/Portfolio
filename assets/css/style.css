@@ -17,6 +17,7 @@
 
 :root {
 
+
 /**
  * colors
  */
@@ -68,7 +69,7 @@
 --light-gray: hsl(0, 0%, 84%);
 --light-gray-70: hsla(0, 0%, 84%, 0.7);
 --bittersweet-shimmer: hsl(0, 43%, 51%);
-
+--swiper-scrollbar-sides-offset:20%;
 /**
  * typography
  */
@@ -561,83 +562,101 @@ main {
 
 /**
  * #testimonials 
- */
+*/
+.testimonials {
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+}
 
- .testimonials { margin-bottom: 30px; }
+.testimonials-title {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: var(--fs-2);
+}
 
- .testimonials-title { margin-bottom: 20px; }
- 
- .testimonials-list {
-   display: flex;
-   justify-content: flex-start;
-   align-items: flex-start;
-   gap: 15px;
-   margin: 0 -15px;
-   padding: 25px 15px;
-   padding-bottom: 35px;
-   overflow-x: auto;
-   scroll-behavior: smooth;
-   overscroll-behavior-inline: contain;
-   scroll-snap-type: inline mandatory;
- }
- 
- .testimonials-item {
-   min-width: 100%;
-   scroll-snap-align: center;
- }
- 
- .testimonials-avatar-box {
-   position: absolute;
-   top: 0;
-   left: 0;
-   transform: translate(15px, -25px);
-   background: var(--bg-gradient-onyx);
-   border-radius: 14px;
-   box-shadow: var(--shadow-1);
- }
- 
- .testimonials-item-title { margin-bottom: 7px; }
- 
- .testimonials-text {
-   color: var(--light-gray);
-   font-size: var(--fs-6);
-   font-weight: var(--fw-300);
-   line-height: 1.6;
-   display: -webkit-box;
-   line-clamp: 4;
-   -webkit-line-clamp: 4;
-   -webkit-box-orient: vertical;
-   overflow: hidden;
- }
- 
- /* New CSS for hover effect on testimonials content card */
- 
- .testimonials .content-card {
-   position: relative;
-   background: var(--border-gradient-onyx);
-   color: var(--white-2);
-   padding: 20px;
-   border-radius: 14px;
-   transition: var(--transition-1);
- }
- 
- .testimonials .content-card::before {
-   content: "";
-   position: absolute;
-   inset: 1px;
-   background: var(--bg-gradient-jet);
-   border-radius: inherit;
-   z-index: -1;
-   transition: var(--transition-1);
- }
- 
- .testimonials .content-card:hover {
-   background: var(--bg-gradient-yellow-1);
- }
- 
- .testimonials .content-card:hover::before {
-   background: var(--bg-gradient-yellow-2);
- }
+.testimonials-item {
+  min-width: 100%;
+  scroll-snap-align: center;
+}
+
+.testimonials-avatar-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(15px, -25px);
+  background: var(--bg-gradient-onyx);
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+}
+
+.testimonials-item-title {
+  margin-bottom: 7px;
+}
+
+.testimonials-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  line-height: 1.6;
+  display: -webkit-box;
+  line-clamp: 4;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.testimonials .content-card {
+  position: relative;
+  background: var(--border-gradient-onyx);
+  color: var(--white-2);
+  padding: 20px;
+  border-radius: 14px;
+  transition: var(--transition-1);
+}
+
+.testimonials .content-card::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.testimonials .content-card:hover {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.testimonials .content-card:hover::before {
+  background: var(--bg-gradient-yellow-2);
+}
+
+.scroll-arrow-left, .scroll-arrow-right {
+  max-width: 20px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 10;
+}
+
+.scroll-arrow-left {
+  left: 10px;
+}
+
+.scroll-arrow-right {
+  right: 10px;
+}
+
+.scroll-arrow-left img, .scroll-arrow-right img {
+  max-width: 100%;
+}
+
+.scroll-arrow-left img {
+  transform: rotate(180deg);
+}
+
+
  
  /**
  * #testimonials-modal
@@ -1477,7 +1496,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .testimonials-title { margin-bottom: 25px; }
 
   .testimonials-list {
-    gap: 30px;
+    gap: 0;
     margin: 0 -30px;
     padding: 30px;
     padding-bottom: 35px;
@@ -1616,7 +1635,6 @@ textarea.form-input::-webkit-resizer { display: none; }
  */
 
 @media (min-width: 768px) {
-
   /**
    * REUSED STYLE
    */
@@ -1655,6 +1673,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   .testimonials-modal {
     gap: 35px;
     max-width: 680px;
+
   }
 
   .modal-avatar-box img { width: 80px; }
@@ -1798,7 +1817,7 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   /* testimonials */
 
-  .testimonials-item { min-width: calc(50% - 15px); }
+  .testimonials-item { min-width: calc(50% - 15px); } 
 
   /* clients */
 
@@ -1945,4 +1964,119 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+
+
+
+/**
+	* Testimonials - Making it a slider 
+**/
+
+div#scroll-arrow-right {
+  max-width: 30px;
+}
+
+.scroll-arrow-right img {
+  max-width: 100%;
+}
+
+div#scroll-arrow-left {
+  max-width: 30px;
+}
+
+#scroll-arrow-left img {
+  max-width: 100%;
+}
+
+.testimonials-section {
+  position: relative;
+}
+
+.scroll-arrow-left {
+  left: -25px;
+  top: calc(50% + 15px);
+}
+
+.scroll-arrow-right {
+  right: -25px;
+  top: calc(50% + 15px);
+}
+
+.swiper-scrollbar::-webkit-scrollbar {
+  width: 5px; 
+  height: 10px; 
+}
+
+.swiper-scrollbar::-webkit-scrollbar-track {
+  background: var(--onyx);  
+  border-radius: 5px;       
+}
+
+.swiper-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--orange-yellow-crayola);
+  border-radius: 5px;       
+}
+
+.swiper-scrollbar::-webkit-scrollbar-button {
+  width: 20px;
+  height: 20px;
+}
+
+.swiper-scrollbar {
+  background: var(--onyx); 
+  border-radius: 5px;     
+  height: 10px;           
+}
+
+.swiper-scrollbar-drag {
+  background: var(--orange-yellow-crayola); 
+  border-radius: 5px;  
+  height: 100%;        
+}
+
+.swiper-scrollbar.swiper-scrollbar-horizontal {
+  height: 10px; 
+}
+
+.swiper-scrollbar.swiper-scrollbar-vertical {
+  width: 5px; 
+}
+
+.testimonial-scrollbar .swiper-scrollbar {
+  z-index: 1;
+}
+
+.testimonials-list {
+  gap: 0;
+  margin: 0 -30px;
+  padding: 30px;
+  padding-bottom: 35px;
+}
+
+.testimonial-scrollbar .swiper-scrollbar {
+  z-index: 1;
+  top:100%;
+}
+@media only screen and (max-width: 769px) {
+
+  :root{
+    --swiper-scrollbar-sides-offset: 5%;
+  }
+
+}
+@media only screen and (max-width: 580px) {
+
+  .scroll-arrow-left {
+    left: -16px;
+  }
+
+  .scroll-arrow-right {
+    right: -16px;
+  }
+
+  .scroll-arrow-left, .scroll-arrow-right {
+    max-width: 15px;
+  }
+  
 }
