@@ -7,6 +7,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>vCard - Personal Portfolio</title>
 
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
   <!--
     - favicon
   -->
@@ -23,6 +25,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+
 </head>
 
 <body>
@@ -306,96 +310,78 @@
         </section>
 
 
-        <!--
-          - testimonials
-        -->
+<!-- 
+  - Testimonials - Making it a slider 
+-->
 
-        <section class="testimonials">
-          <h3 class="h3 testimonials-title">Projects</h3>
-        
-          <!-- Arrow for scrolling projects -->
-          <div class="scroll-arrow">
-            <img src="./assets/images/arrow.svg" alt="Scroll to see more projects">
+<div class="testimonials-section">
+  <h3 class="testimonials-title">Projects</h3>
+  <section class="testimonials swiper-container">
+    <ul class="testimonials-list swiper-wrapper">
+      <li class="testimonials-item swiper-slide">
+        <div class="content-card" data-testimonials-item>
+          <figure class="testimonials-avatar-box">
+            <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+          </figure>
+          <h4 class="testimonials-item-title" data-testimonials-title>Assembleur en C</h4>
+          <div class="testimonials-text" data-testimonials-text>
+            <p>JesaisPasQuoi dire pour l'instant</p>
           </div>
+        </div>
+      </li>
 
-          <ul class="testimonials-list has-scrollbar">
+      <li class="testimonials-item swiper-slide">
+        <div class="content-card" data-testimonials-item>
+          <figure class="testimonials-avatar-box">
+            <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+          </figure>
+          <h4 class="testimonials-item-title" data-testimonials-title>Dementia Detection</h4>
+          <div class="testimonials-text" data-testimonials-text>
+            <p>Pareil que Matthias ou que Linkedin</p>
+          </div>
+        </div>
+      </li>
 
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
+      <li class="testimonials-item swiper-slide">
+        <div class="content-card" data-testimonials-item>
+          <figure class="testimonials-avatar-box">
+            <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+          </figure>
+          <h4 class="testimonials-item-title" data-testimonials-title>Detection de consommation</h4>
+          <div class="testimonials-text" data-testimonials-text>
+            <p>Parcours Numérique</p>
+          </div>
+        </div>
+      </li>
 
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-                </figure>
+      <li class="testimonials-item swiper-slide">
+        <div class="content-card" data-testimonials-item>
+          <figure class="testimonials-avatar-box">
+            <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+          </figure>
+          <h4 class="testimonials-item-title" data-testimonials-title>Projet DL de 3A</h4>
+          <div class="testimonials-text" data-testimonials-text>
+            <p>Rien</p>
+          </div>
+        </div>
+      </li>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Assembleur en C</h4>
+    </ul>
+  </section>
 
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    JesaisPasQuoi dire pour l'instant
-                  </p>
-                </div>
+  <div class="swiper-button">
+    <button class="scroll-arrow-left" id="scroll-arrow-left">
+      <img src="./assets/images/arrow.svg" alt="Scroll left" />
+    </button>
+    <button class="scroll-arrow-right" id="scroll-arrow-right">
+      <img src="./assets/images/arrow.svg" alt="Scroll right" />
+    </button>
+  </div>
 
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Dementia Detection</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Pareil que Matthias ou que Linkedin
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Detection de consommation</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Parcours Numérique
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Projet DL de 3A</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Rien
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
+  <div class="testimonial-scrollbar">
+    <div class="swiper-scrollbar"></div>
+  </div>
+</div>
 
         <!--
           - testimonials modal
@@ -1102,7 +1088,7 @@
 
 
 
-
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <!--
     - custom js link
   -->
@@ -1113,6 +1099,8 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
 
 </body>
 
