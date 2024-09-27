@@ -280,9 +280,9 @@ article.active {
 .content-card {
   position: relative;
   background: var(--border-gradient-onyx);
-  padding: 15px;
-  padding-top: 45px;
-  border-radius: 14px;
+  padding: 10px;
+  padding-top: 30px;
+  border-radius: 10px;
   box-shadow: var(--shadow-2);
   cursor: pointer;
   z-index: 1;
@@ -291,7 +291,7 @@ article.active {
 .content-card::before {
   content: "";
   position: absolute;
-  inset: 1px;
+  inset: 2px;
   background: var(--bg-gradient-jet);
   border-radius: inherit;
   z-index: -1;
