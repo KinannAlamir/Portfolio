@@ -158,27 +158,26 @@ for (let i = 0; i < navigationLinks.length; i++) {
   });
 }
 
-document.querySelectorAll('.has-scrollbar').forEach(scrollContainer => {
-  scrollContainer.addEventListener('click', function(event) {
-    const { target } = event;
-    if (target !== this) return; // If the target is not the scrollbar container, do nothing
 
-    const rect = this.getBoundingClientRect();
-    const scrollHeight = this.scrollHeight;
-    const scrollWidth = this.scrollWidth;
-    const clientHeight = this.clientHeight;
-    const clientWidth = this.clientWidth;
 
-    if (event.offsetY < this.clientHeight) {
-      // Calculate the new scroll position
-      const newScrollTop = (event.clientY - rect.top) * (scrollHeight / clientHeight);
-      this.scrollTop = newScrollTop;
+// Testimonials - Making it a slider 
+
+const testimonials_swiper = new Swiper('.swiper-container.testimonials', {
+  slidesPerView: 1,
+  spaceBetween: 15,
+  navigation: {
+      nextEl: '.scroll-arrow-right',
+      prevEl: '.scroll-arrow-left',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,  
+  },
+  breakpoints: {
+    
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 30,
     }
-
-    if (event.offsetX < this.clientWidth) {
-      // Calculate the new scroll position
-      const newScrollLeft = (event.clientX - rect.left) * (scrollWidth / clientWidth);
-      this.scrollLeft = newScrollLeft;
-    }
-  });
+  },
 });
