@@ -3607,6 +3607,46 @@ img.u-pull-left {
 .folio-list__item {
     margin-bottom : var(--vspace-1);
     position      : relative;
+    transition    : transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: var(--vspace-0_5);
+}
+
+.folio-list__item:hover {
+    transform : translateY(-1.0rem);
+    z-index   : 1;
+    box-shadow: 0 0 20px rgba(234, 190, 124, 0.15), 0 0 40px rgba(35, 150, 127, 0.15);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.folio-list__item::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 16px;
+    padding: 1.5px;
+    background: linear-gradient(135deg, var(--color-1), var(--color-2));
+    -webkit-mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: 
+       linear-gradient(#fff 0 0) content-box, 
+       linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    pointer-events: none;
+}
+
+.folio-list__item:hover::after {
+    opacity: 1;
 }
 
 .folio-list__item-link {
