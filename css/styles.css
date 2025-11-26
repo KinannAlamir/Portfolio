@@ -3608,7 +3608,7 @@ img.u-pull-left {
     margin-bottom : var(--vspace-1);
     position      : relative;
     transition    : transform 0.4s ease-in-out;
-    padding       : var(--vspace-0_5) var(--gutter);
+    padding       : var(--vspace-1) calc(var(--vspace-1) + var(--gutter) / 2);
     z-index       : 1;
 }
 
@@ -3666,10 +3666,34 @@ img.u-pull-left {
     opacity: 1;
 }
 
+.folio-item-emote {
+    width: var(--item-min-height);
+    height: var(--item-min-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.folio-item-emote-inline {
+    display: inline-block;
+    margin-right: 0.5rem;
+    font-size: 1em;
+    line-height: 1;
+}
+
+.folio-list__item-desc {
+    font-size: var(--text-sm);
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: var(--vspace-0_5);
+    line-height: var(--vspace-0_75);
+}
+
 .folio-list__item-link {
     display             : block;
     width               : 100%;
-    padding-left        : calc(5.5 * var(--space));
+    padding-left        : 0;
     color               : white;
     transition-duration : .5s;
     position            : relative;
@@ -3713,9 +3737,9 @@ img.u-pull-left {
 }
 
 .folio-list__item-text {
-    padding-top : var(--vspace-0_5);
+    padding-top : 0;
     border-top  : none;
-    min-height  : var(--item-min-height);
+    min-height  : auto;
     position    : relative;
 }
 
