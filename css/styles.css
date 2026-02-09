@@ -3411,6 +3411,7 @@ img.u-pull-left {
     object-fit     : cover;
     margin         : 0;
     vertical-align : bottom;
+    border-radius  : 16px;
 }
 
 .about-info__text {
@@ -3552,6 +3553,7 @@ img.u-pull-left {
     .about-info__text {
         padding                 : var(--vspace-1_5) var(--vspace-1) var(--vspace-1) var(--vspace-1);
         margin-left             : 0;
+        margin-top              : var(--vspace-1_25);
         background              : rgba(20, 21, 22, 0.6);
         backdrop-filter         : blur(12px);
         -webkit-backdrop-filter : blur(12px);
