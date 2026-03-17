@@ -15,13 +15,13 @@
     * -------------------------------------------------- */
     const tl = anime.timeline( {
         easing: 'easeInOutCubic',
-        duration: 800,
+        duration: 400,
         autoplay: false
     })
     .add({
         targets: '#loader',
         opacity: 0,
-        duration: 1000,
+        duration: 500,
         begin: function(anim) {
             window.scrollTo(0, 0);
         }
@@ -43,27 +43,27 @@
         targets: [ '.s-intro .text-pretitle', '.s-intro .text-huge-title'],
         translateX: [100, 0],
         opacity: [0, 1],
-        delay: anime.stagger(400)
+        delay: anime.stagger(200)
     })
     .add({
         targets: '.circles span',
         keyframes: [
             {opacity: [0, .3]},
-            {opacity: [.3, .1], delay: anime.stagger(100, {direction: 'reverse'})}
+            {opacity: [.3, .1], delay: anime.stagger(50, {direction: 'reverse'})}
         ],
-        delay: anime.stagger(100, {direction: 'reverse'})
+        delay: anime.stagger(50, {direction: 'reverse'})
     })
     .add({
         targets: '.intro-social li',
         translateX: [-50, 0],
         opacity: [0, 1],
-        delay: anime.stagger(100, {direction: 'reverse'})
+        delay: anime.stagger(50, {direction: 'reverse'})
     })
     .add({
         targets: '.intro-scrolldown',
         translateY: [100, 0],
         opacity: [0, 1]
-    }, '-=800');
+    }, '-=400');
 
 
 
@@ -192,12 +192,18 @@
                 const isAnimated = current.classList.contains("ss-animated");
 
                 if (inView && (!isAnimated)) {
+
+                    const isWorks = current.closest('.s-works') !== null;
+                    const dur = isWorks ? 300 : 400;
+                    const stag = isWorks ? 150 : 200;
+                    const stagStart = isWorks ? 75 : 100;
+
                     anime({
                         targets: current.querySelectorAll("[data-animate-el]"),
                         opacity: [0, 1],
                         translateY: [100, 0],
-                        delay: anime.stagger(400, {start: 200}),
-                        duration: 800,
+                        delay: anime.stagger(stag, {start: stagStart}),
+                        duration: dur,
                         easing: 'easeInOutCubic',
                         begin: function(anim) {
                             current.classList.add("ss-animated");
